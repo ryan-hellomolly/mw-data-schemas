@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["order_id", "store", "status"],
+  "properties": {
+    "order_id": { "type": "string" },
+    "store":    { "type": "string", "enum": ["AU", "GB", "NZ", "US"] },
+    "status":   { "type": "string", "enum": ["pending", "processing", "shipped", "delivered", "cancelled"] }
+  },
+  "additionalProperties": false
+}
