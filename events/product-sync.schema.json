@@ -1,11 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "array",
+  "type": "object",
   "required": ["product_id", "store", "status"],
   "properties": {
     "product_id": { "type": "string" },
     "store":      { "type": "string", "enum": ["AU", "GB", "NZ", "US"] },
-    "status":     { "type": "string", "enum": ["active", "archived"] }
+    "status":     { "type": "string", "enum": ["active", "archived"] },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sku"],
+        "properties": {
+          "sku":                 { "type": "string" },
+          "barcode":             { "type": "string" },
+          "quantity":            { "type": "integer", "minimum": 0 },
+          "shopify_variant_key": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
   },
   "additionalProperties": false
 }

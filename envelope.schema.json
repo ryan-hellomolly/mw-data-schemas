@@ -8,7 +8,7 @@
     "source":         { "type": "string", "enum": ["mw-api", "mw-service"] },
     "timestamp":      { "type": "string", "format": "date-time" },
     "retry_count":    { "type": "integer", "minimum": 0, "default": 0 },
-    "payload":        { "type": "array" }
+    "payload":        { "type": "object" }
   },
   "additionalProperties": false
 }
